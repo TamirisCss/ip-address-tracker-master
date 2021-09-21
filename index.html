@@ -7,30 +7,37 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  
   <title>Frontend Mentor | IP Address Tracker</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-
-  IP Address Tracker
-
-  Search for any IP address or domain
-
-  IP Address
-  Location
-  Timezone
-    UTC <!-- add offset value dynamically using the API -->
-  ISP
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <main class="container">
+    <div class="bg-img">
+      <h1 class="title">IP Address Tracker</h1>
+      <div class="input-box">
+        <input type="text" value="Search for any IP address or domain">
+        <img src="./images/icon-arrow.svg" alt="arrow icon">
+      </div>
+    </div>
+    <div class="map">
+      <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d310843.4641968595!2d13.144550026997132!3d52.506931246193346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e373f035901%3A0x42120465b5e3b70!2sBerlim!5e0!3m2!1spt-BR!2sde!4v1632225290892!5m2!1spt-BR!2sde" 
+      width="600" 
+      height="450" 
+      style="border:0;" 
+      allowfullscreen="" loading="lazy">
+    </iframe>
+    </div>
+    <div class="info-box">
+      <p class="ip-address">IP Address</p>
+      <p class="location">Location</p>
+      <p class="timezone">Timezone</p>
+      <p class="timezone">UTC</p> <!-- add offset value dynamically using the API -->
+      <p class="ISP">ISP</p>
+    </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </main>
 </body>
 </html>
