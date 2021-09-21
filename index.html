@@ -15,28 +15,39 @@
       <h1 class="title">IP Address Tracker</h1>
       <div class="input-box">
         <input type="text" value="Search for any IP address or domain">
-        <img src="./images/icon-arrow.svg" alt="arrow icon">
+        <div class="arrow-bg">
+          <img src="./images/icon-arrow.svg" alt="arrow icon">
+        </div>
       </div>
     </div>
     <div class="map">
       <iframe 
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d310843.4641968595!2d13.144550026997132!3d52.506931246193346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e373f035901%3A0x42120465b5e3b70!2sBerlim!5e0!3m2!1spt-BR!2sde!4v1632225290892!5m2!1spt-BR!2sde" 
-      width="600" 
-      height="450" 
       style="border:0;" 
       allowfullscreen="" loading="lazy">
     </iframe>
     </div>
     <div class="info-box">
-      <p class="ip-address">IP Address</p>
-      <p class="location">Location</p>
-      <p class="timezone">Timezone</p>
-      <p class="timezone">UTC</p> <!-- add offset value dynamically using the API -->
-      <p class="ISP">ISP</p>
+      <div>
+        <span>IP Address</span>
+        <p class="ip-address">984574875945</p>
+      </div>
+      <div>
+        <span>Location</span>
+        <p class="location">Berlin</p>
+      </div>
+      <div>
+        <span>Timezone</span>
+        <p class="timezone">UTC - 05:00</p> <!-- add offset value dynamically using the API -->
+      </div>
+      <div>
+        <span>ISP</span>
+        <p class="ISP">Skdjfid</p>
+      </div>
     </div>
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="#">Tamiris</a>.
     </div>
   </main>
 </body>
