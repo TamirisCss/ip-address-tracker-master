@@ -19,7 +19,7 @@ body {
     background-image: url(./images/pattern-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 33vh;
+    height: 35vh;
 }
 .title {
     color: #fff;
@@ -65,17 +65,31 @@ body {
     height: 18%;
     width: 70%;
     background: #fff;
-    padding: 1rem;
+    padding: 1.2rem;
     border-radius: .80rem;
     display: flex;
+    justify-content: space-around;
+    /* align-items: center; */
 }
+.info-box div {
+    flex-grow: 1;
+}
+.info-box span {
+    color: var(--dark-gray);
+    font-size: 1rem;
+}
+.info-box div p {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
 iframe {
-    height: 64vh;
+    height: 65vh;
     width: 100%;
 }
+
 .attribution { 
-    font-size: 11px; text-align: center; 
-    height: 3vh;
+    font-size: 11px; text-align: center;
 }
 .attribution a { 
     color: hsl(228, 45%, 44%); 
