@@ -6,6 +6,9 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
   <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | IP Address Tracker</title>
 </head>
@@ -20,12 +23,10 @@
         </div>
       </div>
     </div>
-    <div class="map">
-      <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d310843.4641968595!2d13.144550026997132!3d52.506931246193346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e373f035901%3A0x42120465b5e3b70!2sBerlim!5e0!3m2!1spt-BR!2sde!4v1632225290892!5m2!1spt-BR!2sde" 
-      style="border:0;" 
-      allowfullscreen="" loading="lazy">
-    </iframe>
+    <div class="map" id="mapid">
+    </div>
+    <div class="icon-location">
+      <img src="./images/icon-location.svg" alt="location icon">
     </div>
     <div class="info-box">
       <div>
@@ -50,5 +51,9 @@
       Coded by <a href="#">Tamiris</a>.
     </div>
   </main>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
+  <script src="./main.js"></script>
 </body>
 </html>
