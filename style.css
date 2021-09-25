@@ -93,3 +93,31 @@ body {
     color: hsl(228, 45%, 44%); 
     text-align: center;
 }
+
+@media (max-width: 1050px) {
+    .info-box {
+        flex-wrap: wrap;
+    }
+}
+@media (max-width: 695px) {
+    .info-box {
+        min-width: 80%;
+        right: 10%;
+    }
+    .src-input {
+        min-width: 50%;
+    }
+}
+@media (max-width: 557px) {
+    .info-box {
+        flex-direction: column;
+        height: 35%;
+        top:16%;
+    }
+    .info-box div {
+        text-align: center;
+    }
+    .src-input {
+        min-width: 72%;
+    }
+}
