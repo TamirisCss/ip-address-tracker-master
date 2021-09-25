@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
    crossorigin=""/>
+   
   <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | IP Address Tracker</title>
 </head>
@@ -17,33 +18,28 @@
     <div class="bg-img">
       <h1 class="title">IP Address Tracker</h1>
       <div class="input-box">
-        <input type="text" value="Search for any IP address or domain">
-        <div class="arrow-bg">
-          <img src="./images/icon-arrow.svg" alt="arrow icon">
-        </div>
+        <input class="src-input" type="text" value="Search for any IP address or domain">
+        <input class="arrow-bg" type="image" src="./images/icon-arrow.svg" name="submit" alt="submit">
       </div>
     </div>
     <div class="map" id="mapid">
     </div>
-    <div class="icon-location">
-      <img src="./images/icon-location.svg" alt="location icon">
-    </div>
     <div class="info-box">
       <div>
         <span>IP Address</span>
-        <p class="ip-address">984574875945</p>
+        <p class="ip-address"></p>
       </div>
       <div>
         <span>Location</span>
-        <p class="location">Berlin</p>
+        <p class="location"></p>
       </div>
       <div>
         <span>Timezone</span>
-        <p class="timezone">UTC - 05:00</p> <!-- add offset value dynamically using the API -->
+        <p class="timezone"></p> <!-- add offset value dynamically using the API -->
       </div>
       <div>
         <span>ISP</span>
-        <p class="ISP">Skdjfid</p>
+        <p class="ISP"></p>
       </div>
     </div>
     <div class="attribution">

@@ -87,14 +87,14 @@ body {
     height: 65vh;
     width: 100%;
 }
-.icon-location {
+/* .icon-location {
     position: absolute;
     top: 50%;
     right: 50%;
 }
 .icon-location img {
     width: 2rem;
-}
+} */
 
 .attribution { 
     font-size: 11px; text-align: center;

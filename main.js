@@ -1,29 +1,64 @@
-function mapinha() {
 
-    const myApiKey = "at_T7M6W2MGQt8q5zJu3S8I9UuJaNR6p";
-    
-    const ipAddress = document.querySelector('.ip-address');
-    const location = document.querySelector('.location');
-    const timezone = document.querySelector('.timezone');
-    const ISP = document.querySelector('.ISP');
-    
-    const mymap = L.map("mapid").setView([51.505, -0.09], 13);
-        let mapToken =
-          "pk.eyJ1IjoibW9yc2FrYTkiLCJhIjoiY2trOXZmYjE0MGd0cDJzcGJueHd1MTZidCJ9.UJ5RlDnugIUNkhqsHEf3fw";
-        L.tileLayer(
-          `https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${mapToken}`,
-          {
-            attribution:
-              'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-            maxZoom: 18,
-            id: "mapbox/streets-v11",
-            tileSize: 512,
-            zoomOffset: -1,
-            accessToken: "your.mapbox.access.token",
-          }
-        ).addTo(mymap);
+
+const myApiKey = "at_T7M6W2MGQt8q5zJu3S8I9UuJaNR6p";
+
+const input = document.querySelector('.input-box');
+const ipAddress = document.querySelector('.ip-address');
+const ipLocation = document.querySelector('.location');
+const timezone = document.querySelector('.timezone');
+const isp = document.querySelector('.ISP');
+
+const myMap = L.map('mapid')
+let lat;
+let lng;
+
+const displayMap = () => {
+    let markerIcon = L.icon( {
+        iconUrl: 'images/icon-location.svg',
+        iconSize:     [46, 56], 
+        iconAnchor:   [23, 55], 
+    });
+    myMap.setView([lat, lng], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(myMap);
+
+    L.marker([lat, lng], {icon: markerIcon}).addTo(myMap)
+    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+    .openPopup();
 };
-mapinha();
+
+const displayIpInfos = (data) => {
+    ipAddress.innerText = data.ip;
+    ipLocation.innerText = `${data.location.city}, ${data.location.country} ${data.location.postalCode}`;
+    timezone.innerText = `UTC ${data.location.timezone}`;
+    isp.innerText = data.isp;
+};
+    
+
+const getIpInfos = (ipAddress = "") => {
+    fetch(`https://geo.ipify.org/api/v1?apiKey=at_mGXeU1zY4JbFU1sxUdh1WsaPcmALT&ipAddress=${ipAddress}`)
+    .then(res => res.json())
+    .then(data => {
+        lat = data.location.lat;
+        lng = data.location.lng;
+        displayIpInfos(data);
+        displayMap();
+    })
+}
+getIpInfos();
+
+input.addEventListener("submit", event => {
+    event.preventDefault()
+    getIpInfos(event.target[0].value);
+    event.target[0].value = "";
+});
+
+
+
+
+
 
 
 
