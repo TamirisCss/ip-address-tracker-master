@@ -3,8 +3,9 @@
 const myApiKey = "at_T7M6W2MGQt8q5zJu3S8I9UuJaNR6p";
 
 const input = document.querySelector('.input-box');
+const inputBtn = document.querySelector('.arrow-bg');
 const ipAddress = document.querySelector('.ip-address');
-const ipLocation = document.querySelector('.location');
+const ipLocation = document.querySelector('.local');
 const timezone = document.querySelector('.timezone');
 const isp = document.querySelector('.ISP');
 
@@ -25,7 +26,7 @@ const displayMap = () => {
     }).addTo(myMap);
 
     L.marker([lat, lng], {icon: markerIcon}).addTo(myMap)
-    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+    .bindPopup('Hey.<br> You are here.')
     .openPopup();
 };
 
@@ -38,7 +39,7 @@ const displayIpInfos = (data) => {
     
 
 const getIpInfos = (ipAddress = "") => {
-    fetch(`https://geo.ipify.org/api/v1?apiKey=at_mGXeU1zY4JbFU1sxUdh1WsaPcmALT&ipAddress=${ipAddress}`)
+    fetch(`https://geo.ipify.org/api/v1?apiKey=${myApiKey}&ipAddress=${ipAddress}`)
     .then(res => res.json())
     .then(data => {
         lat = data.location.lat;

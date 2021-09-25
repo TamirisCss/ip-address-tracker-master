@@ -30,7 +30,7 @@ body {
     display: flex;
     justify-content: center;
 }
-.input-box input {
+.input-box .src-input {
     padding: .80rem;
     width: 32%;
     color: var(--dark-gray);
@@ -43,6 +43,7 @@ body {
 .input-box .arrow-bg {
     background: #000;
     width: 2.6rem;
+    border: none;
     border-bottom-right-radius: .60rem;
     border-top-right-radius: .60rem;
     display: flex;
@@ -53,9 +54,6 @@ body {
 }
 .input-box .arrow-bg:hover {
     background: var(--very-dark-gray);
-}
-.input-box .arrow-bg img {
-    width: .55rem;
 }
 
 .info-box {
@@ -87,14 +85,6 @@ body {
     height: 65vh;
     width: 100%;
 }
-/* .icon-location {
-    position: absolute;
-    top: 50%;
-    right: 50%;
-}
-.icon-location img {
-    width: 2rem;
-} */
 
 .attribution { 
     font-size: 11px; text-align: center;
