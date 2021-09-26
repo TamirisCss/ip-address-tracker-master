@@ -2,7 +2,8 @@
 
 const myApiKey = "at_T7M6W2MGQt8q5zJu3S8I9UuJaNR6p";
 
-const input = document.querySelector('.input-box');
+const form = document.querySelector('.input-box');
+const input = document.querySelector('.src-input');
 const inputBtn = document.querySelector('.arrow-bg');
 const ipAddress = document.querySelector('.ip-address');
 const ipLocation = document.querySelector('.local');
@@ -25,9 +26,7 @@ const displayMap = () => {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(myMap);
 
-    L.marker([lat, lng], {icon: markerIcon}).addTo(myMap)
-    .bindPopup('Hey.<br> You are here.')
-    .openPopup();
+    L.marker([lat, lng], {icon: markerIcon}).addTo(myMap);
 };
 
 const displayIpInfos = (data) => {
@@ -47,13 +46,15 @@ const getIpInfos = (ipAddress = "") => {
         displayIpInfos(data);
         displayMap();
     })
+    .catch(error => {
+        alert("invalid IP address.");
+    })
 }
 getIpInfos();
 
-input.addEventListener("submit", event => {
-    event.preventDefault()
-    getIpInfos(event.target[0].value);
-    event.target[0].value = "";
+form.addEventListener("submit", event => {
+    event.preventDefault();
+    getIpInfos(input.value);
 });
 
 
