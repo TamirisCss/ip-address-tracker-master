@@ -35,10 +35,18 @@ const displayIpInfos = (data) => {
     timezone.innerText = `UTC ${data.location.timezone}`;
     isp.innerText = data.isp;
 };
-    
 
-const getIpInfos = (ipAddress = "") => {
-    fetch(`https://geo.ipify.org/api/v1?apiKey=${myApiKey}&ipAddress=${ipAddress}`)
+const getIpInfos = (inputValue = "") => {
+    let filter;
+    //regex que verifica se a string inputValue tem o formato de um IP
+    //um IP tem 4 grupos numeros separados por ponto
+    if (/\d+\.\d+\.\d+\.\d+/.test(inputValue)) {
+        filter = `ipAddress=${inputValue}`
+    } else {
+        filter = `domain=${inputValue}`
+    }
+
+    fetch(`https://geo.ipify.org/api/v1?apiKey=${myApiKey}&${filter}`)
     .then(res => res.json())
     .then(data => {
         lat = data.location.lat;
@@ -47,7 +55,7 @@ const getIpInfos = (ipAddress = "") => {
         displayMap();
     })
     .catch(error => {
-        alert("invalid IP address.");
+        alert("invalid input.");
     })
 }
 getIpInfos();
