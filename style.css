@@ -96,13 +96,17 @@ body {
 
 @media (max-width: 1050px) {
     .info-box {
-        flex-wrap: wrap;
+        width: 93%;
+        right: 3%;
     }
 }
 @media (max-width: 695px) {
     .info-box {
         min-width: 80%;
-        right: 10%;
+        right: 3%;
+        flex-direction: column;
+        height: 45%;
+        text-align: center;
     }
     .src-input {
         min-width: 50%;
@@ -110,12 +114,9 @@ body {
 }
 @media (max-width: 557px) {
     .info-box {
-        flex-direction: column;
-        height: 35%;
-        top:16%;
+        top: 30%;
     }
     .info-box div {
-        text-align: center;
     }
     .src-input {
         min-width: 72%;
