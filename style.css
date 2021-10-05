@@ -99,6 +99,12 @@ body {
         width: 93%;
         right: 3%;
     }
+    .info-box span {
+        font-size: .80rem;
+    }
+    .info-box div p {
+        font-size: 1rem;
+    }
 }
 @media (max-width: 695px) {
     .info-box {
